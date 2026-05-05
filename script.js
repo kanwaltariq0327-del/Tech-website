@@ -2,6 +2,7 @@ const openMenuButton = document.querySelector("#open-menu-button");
 const closeMenuButton = document.querySelector("#close-menu-button");
 const menu = document.querySelector(".menu");
 const anchors = document.querySelectorAll(".anchor");
+const navBtn = document.querySelector(".nav-btn");
 
 //   HAMBURGER MENU
 openMenuButton.addEventListener('click', () => {
@@ -16,6 +17,12 @@ anchors.forEach(anchor => {
         document.body.classList.remove("show-mobile-menu");
     });
 });
+
+//  CLOSE MENU WHEN CLICK ON NAV BUTTON
+navBtn.addEventListener('click', () => {
+    document.body.classList.remove("show-mobile-menu");
+})
+
 
 
 //   CLOSE MENU WHEN CLICK OUTSIDE

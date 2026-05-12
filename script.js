@@ -32,73 +32,40 @@ document.addEventListener('click', e => {
         }
 })
 
-// SECTION 4 — team list: horizontal touch slider at max-width 900px (no arrows)
-(function initSection4TeamSlider() {
-    const mq = window.matchMedia("(max-width: 900px)");
-    const slider = document.getElementById("section4-slider");
-    const list = document.querySelector(".section4-team-list");
-    if (!list || !slider) return;
+//    SLIDER
+const swiper = new Swiper('.slider-wrapper', {
+  // Optional parameters
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 25,
 
-    function getSnapTargets() {
-        const items = [...list.querySelectorAll(".member-list")];
-        if (!items.length) return [];
-        const pad = parseFloat(getComputedStyle(list).paddingLeft) || 0;
-        return items.map((el) => Math.max(0, el.offsetLeft - pad));
-    }
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable : true,
+    dynamicBullets: true,
+  },
 
-    function snapNearestMemberSlide() {
-        if (!mq.matches) return;
-        const targets = getSnapTargets();
-        if (!targets.length) return;
-        const x = list.scrollLeft;
-        let bestIdx = 0;
-        let bestDist = Infinity;
-        targets.forEach((t, i) => {
-            const d = Math.abs(x - t);
-            if (d < bestDist) {
-                bestDist = d;
-                bestIdx = i;
-            }
-        });
-        list.scrollTo({ left: targets[bestIdx], behavior: "smooth" });
-    }
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-    function updateEdgeFades() {
-        if (!mq.matches) {
-            slider.classList.remove("is-at-start", "is-at-end");
-            return;
-        }
-        const { scrollLeft, scrollWidth, clientWidth } = list;
-        const epsilon = 3;
-        const atStart = scrollLeft <= epsilon;
-        const atEnd = scrollLeft >= scrollWidth - clientWidth - epsilon;
-        slider.classList.toggle("is-at-start", atStart);
-        slider.classList.toggle("is-at-end", atEnd);
-    }
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
 
-    function onTouchEnd() {
-        if (!mq.matches) return;
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                snapNearestMemberSlide();
-                updateEdgeFades();
-            });
-        });
-    }
-
-    function onMqChange() {
-        if (!mq.matches) {
-            list.scrollLeft = 0;
-            slider.classList.remove("is-at-start", "is-at-end");
-        } else {
-            updateEdgeFades();
-        }
-    }
-
-    list.addEventListener("touchend", onTouchEnd, { passive: true });
-    list.addEventListener("touchcancel", onTouchEnd, { passive: true });
-    list.addEventListener("scroll", updateEdgeFades, { passive: true });
-    mq.addEventListener("change", onMqChange);
-    window.addEventListener("resize", updateEdgeFades, { passive: true });
-    updateEdgeFades();
-})();
+  breakpoints: {
+    0: {
+        slidesPerView : 1
+    },
+    768: {
+        slidesPerView : 2
+    },
+    1024: {
+        slidesPerView : 3
+    },
+  }
+});

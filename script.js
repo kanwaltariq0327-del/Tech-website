@@ -69,3 +69,21 @@ const swiper = new Swiper('.slider-wrapper', {
     },
   }
 });
+
+
+// ANIMATION PROCESS:
+
+const observe = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // console.log(entry.target);
+      entry.target.classList.add("show");
+    }else{
+      entry.target.classList.remove("show")
+    }
+  })
+}, {})
+
+const animationElement = document.querySelectorAll (".animation");
+
+animationElement.forEach(el => observe.observe(el));

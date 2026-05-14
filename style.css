@@ -160,7 +160,7 @@ body {
   font-size: var(--font-size-xxl);
   text-transform: uppercase;
   color: white;
-  transform: translate(0, -250px);
+  transform: translate(0, -200px);
   transition: 0.6s ease;
 }
 

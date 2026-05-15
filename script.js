@@ -73,7 +73,7 @@ const swiper = new Swiper('.slider-wrapper', {
 
 // ANIMATION PROCESS:
 
-const observe = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       // console.log(entry.target);
@@ -85,5 +85,7 @@ const observe = new IntersectionObserver((entries) => {
 }, {})
 
 const animationElement = document.querySelectorAll (".animation");
+const animateElement = document.querySelectorAll (".member-list");
 
-animationElement.forEach(el => observe.observe(el));
+animationElement.forEach(el => observer.observe(el));
+animateElement.forEach(el => observer.observe(el));

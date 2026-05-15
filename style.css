@@ -255,7 +255,7 @@ body {
 
 .third-div {
   opacity: 0;
-  transform: translate(-400px, 0);
+  transform: translate(-300px, 0);
   transition: 1s ease;
 }
 
@@ -412,6 +412,8 @@ body {
   line-height: 30px;
   list-style: none;
   font-family: "Playwrite GB S", cursive;
+  translate: 70%;
+  transition: 1.2s ease;
 
 }
 

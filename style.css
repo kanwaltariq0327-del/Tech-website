@@ -401,6 +401,7 @@ body {
     var(--dark-shade) 100%
   );
   color: white;
+  overflow: hidden;
 }
 
 .section4-div .list {

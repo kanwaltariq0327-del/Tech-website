@@ -135,6 +135,7 @@ body {
     var(--darker-shade) 10%,
     var(--dark-shade) 100%
   );
+  overflow: hidden;
 }
 
 .circle {

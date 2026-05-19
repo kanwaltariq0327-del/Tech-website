@@ -32,6 +32,7 @@ document.addEventListener('click', e => {
         }
 })
 
+
 //    SLIDER
 const swiper = new Swiper('.slider-wrapper', {
   // Optional parameters
@@ -67,7 +68,13 @@ const swiper = new Swiper('.slider-wrapper', {
     1024: {
         slidesPerView : 3
     },
-  }
+  },
+
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
 });
 
 

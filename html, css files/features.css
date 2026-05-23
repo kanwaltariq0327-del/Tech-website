@@ -1,27 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Miniver&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 
-
-
 main {
     background: linear-gradient(
     180deg,
     var(--darker-shade) 10%,
     var(--dark-shade) 100%
     );
-    padding: 80px 0;
+    padding: 150px 0;
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 150px;
     font-family: "Roboto", sans-serif; 
 }
 
 
-/* FEATURES SECTION STYLING */
-.features-section {
+/* FEATURES SECTION & FUNCTIONALITY SECTION STYLING */
+.features-section, .functionality-section {
     width: 80%;
     background-color: white;
     padding: 50px;
@@ -31,9 +29,8 @@ main {
     gap: 50px;
 }
 
-
-/* FEATURES HEAD STYLING */
-.features-head {
+/* FEATURES HEAD & FUNCTIONALITY HEAD STYLING*/
+.features-head, .functionality-head {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -42,11 +39,10 @@ main {
     gap: 20px;
 }
 
-.features-head p {
+.features-head p, .functionality-head p {
     color: #666;
     width: 60%;
 }
-
 
 /* FEATURES MID STYLING */
 .features-mid {
@@ -90,7 +86,7 @@ main {
     gap: 50px;
 }
 
-.features-bottom p {
+.features-bottom p, .guidance-div p, .adv-func-div p {
     color: #666;
 }
 
@@ -109,7 +105,7 @@ main {
     gap: 30px;
 }
 
-.features-bottom .pro button {
+.features-bottom .pro button, .guidance-div2 button {
     background-color: #2b59ff;
     border: 2px solid #2b59ff;
     color: white;
@@ -118,7 +114,7 @@ main {
     transition: 0.3s ease;
 }
 
-.features-bottom .pro button:hover {
+.features-bottom .pro button:hover, .guidance-div2 button:hover {
     background: transparent;
     color: #2b59ff;
 }
@@ -142,21 +138,78 @@ main {
     gap: 15px;
 }
 
-/* FUNCTIONALITY SECTION STYLING */
-.functionality-section {
-    width: 80%;
-    background-color: white;
-    padding: 50px;
-    border-radius: 20px;
+/* FUNCTIONALITY STYLING */
+.functionality {
+    display: flex;
+    gap: 10px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.functionality button {
+    min-width: 25%;
+    padding: 14px 0;
+    border: 2px solid #66666632;
+    border-radius: 5px;
+    background: transparent;
+    transition: 0.3s ease;
+}
+
+.functionality button:hover {
+    color: #2b59ff;
+}
+
+/* GUIDANCE STYLING */
+.guidance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #66666632;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.guidance-div {
+    line-height: 30px;
+}
+
+.guidance-div2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ADVANCE FUNCTIONALITY STYLING */
+.adv-func {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.adv-func-div {
+    max-width: 362px;
+    display: flex;
+    gap: 10px;
+    border: 2px solid #66666632;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.adv-func-div div {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 10px;
 }
+
+
 
 
 /* MEDIA QUERY */
 @media (max-width:1000px) {
-    .features-head p {
+    .features-head p, .functionality-head p {
        width: 90%;
     }
 
@@ -178,6 +231,16 @@ main {
     }
 
     .features-bottom .pro {
+        width: 100%;
+    }
+
+    /* ---- */
+    .functionality button {
+        width: 50%;
+    }
+
+    /* ---- */
+    .adv-func-div {
         width: 100%;
     }
 
@@ -215,6 +278,10 @@ main {
     .features-mid button.show-buttons {
         display: block;
     } 
+    /* ---- */
+    .functionality button {
+        width: 100%;
+    }
 
 }
 

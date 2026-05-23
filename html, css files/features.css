@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Miniver&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+
+
+
+main {
+    background: linear-gradient(
+    180deg,
+    var(--darker-shade) 10%,
+    var(--dark-shade) 100%
+    );
+    padding: 80px 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    font-family: "Roboto", sans-serif; 
+}
+
+
+/* FEATURES SECTION STYLING */
+.features-section {
+    width: 80%;
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+
+/* FEATURES HEAD STYLING */
+.features-head {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.features-head p {
+    color: #666;
+    width: 60%;
+}
+
+
+/* FEATURES MID STYLING */
+.features-mid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.features-mid button {
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 25%;
+    color: #666;
+}
+
+.features-mid button::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    display: block;
+    margin: 10px auto 0;
+    background-color: #666666a6;
+    border-radius: 2px;
+}
+
+.features-mid button:hover {
+    color: #2b59ff;
+}
+
+.features-mid button .down-arrow {
+    transform: rotate(0deg);
+    display: none;
+    transition: 0.3s ease;
+}
+
+/* FEATURES BOTTOM STYLING */
+.features-bottom {
+    display: flex;
+    gap: 50px;
+}
+
+.features-bottom p {
+    color: #666;
+}
+
+.features-bottom h4 {
+    font-weight: 500;
+}
+
+.features-bottom .pro {
+    background-color: #e8f2ef;
+    width: 40%;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.features-bottom .pro button {
+    background-color: #2b59ff;
+    border: 2px solid #2b59ff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.features-bottom .pro button:hover {
+    background: transparent;
+    color: #2b59ff;
+}
+
+.features-bottom .ai, .tracking {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    gap: 20px;
+}
+
+.context {
+    display: flex;
+    gap: 20px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* FUNCTIONALITY SECTION STYLING */
+.functionality-section {
+    width: 80%;
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+
+/* MEDIA QUERY */
+@media (max-width:1000px) {
+    .features-head p {
+       width: 90%;
+    }
+
+    /* ---- */
+    .features-mid {
+        gap: 20px 0;
+        justify-content: center;
+    }
+
+    .features-mid button {
+        width: 50%;
+        gap: 20px;
+    }
+
+    /* ---- */
+    .features-bottom {
+       flex-direction: column;
+       padding: 0 20px;
+    }
+
+    .features-bottom .pro {
+        width: 100%;
+    }
+
+}
+
+/* MEDIA QUERY */
+@media (max-width:600px) {
+    .features-section, .functionality-section {
+        width: 93%;
+        padding: 50px 10px;
+    }
+
+    /* ---- */
+    .features-mid {
+        flex-direction: column; 
+        width: 100%;
+    }
+
+    .features-mid button {
+        width: 100%;
+        display: none;
+    }
+
+    .features-mid button.active {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .features-mid button .down-arrow {
+        display: inline;
+    }
+
+    .features-mid button.show-buttons {
+        display: block;
+    } 
+
+}
+

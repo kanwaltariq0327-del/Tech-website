@@ -21,7 +21,7 @@ main {
 
 /* FEATURES SECTION & FUNCTIONALITY SECTION STYLING */
 .features-section, .functionality-section {
-    width: 80%;
+    width: 90%;
     background-color: white;
     padding: 50px;
     border-radius: 20px;
@@ -84,7 +84,7 @@ main {
 /* FEATURES BOTTOM STYLING */
 .features-bottom {
     display: flex;
-    gap: 50px;
+    gap: 20px;
 }
 
 .features-bottom p, .guidance-div p, .adv-func-div p {
@@ -97,7 +97,7 @@ main {
 
 .features-bottom .pro {
     background-color: #e8f2ef;
-    width: 40%;
+    width: 50%;
     padding: 40px;
     display: flex;
     justify-content: center;

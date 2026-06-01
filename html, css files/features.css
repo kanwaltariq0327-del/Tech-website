@@ -7,8 +7,9 @@ main {
     var(--darker-shade) 10%,
     var(--dark-shade) 100%
     );
-    padding: 150px 0;
-    width: 100vw;
+    padding: 100px 0;
+    width: 100%;
+    max-width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -190,7 +191,7 @@ main {
 }
 
 .adv-func-div {
-    max-width: 362px;
+    max-width: 355px;
     display: flex;
     gap: 10px;
     border: 2px solid #66666632;

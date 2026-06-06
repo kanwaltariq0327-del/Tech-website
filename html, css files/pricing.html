@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="pricing.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <title>Tech — Pricing</title>
+  </head>
+  <body class="pricing-body">
+    <header class="container">
+      <nav class="nav-bar">
+        <div class="logo">
+          <img class="logo-img" src="../images/logo.png" alt="" />
+          <a href="../index.html" class="logo-text">Tech</a>
+        </div>
+
+        <div class="menu">
+          <div class="anchors-list">
+            <button id="close-menu-button" class="fa-solid fa-xmark"></button>
+
+            <a href="../index.html" class="anchor">Home</a>
+            <a href="./features.html" class="anchor">Features</a>
+            <a href="./solution.html" class="anchor">Solution</a>
+            <a href="#" class="anchor">Resources</a>
+            <a href="./pricing.html" class="anchor">Pricing</a>
+          </div>
+
+          <div class="nav-button">
+            <button class="nav-btn">
+              <a href="../index.html#section6-div">Get Your Ticket</a>
+            </button>
+          </div>
+        </div>
+
+        <button id="open-menu-button" class="fa-solid fa-bars"></button>
+      </nav>
+    </header>
+
+    <main class="pricing-main">
+      <div class="pricing-grid-bg"></div>
+
+      <section class="pricing-hero">
+        <div class="pricing-top-row">
+          <a href="../index.html" class="pricing-back">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>PROCESSUS</span>
+          </a>
+
+          <div class="pricing-badge">
+            <i class="fa-solid fa-table-list"></i>
+            <span>Formules Tarifaires</span>
+          </div>
+
+          <div class="pricing-reviews">
+            <div class="pricing-avatars">
+              <img src="../images/user1.jpg" alt="" />
+              <img src="../images/user2.jpg" alt="" />
+              <img src="../images/user3.jpg" alt="" />
+              <img src="../images/user4.jpg" alt="" />
+            </div>
+            <div class="pricing-rating">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="rating-score">5.0</span>
+              <span class="rating-text">from 6700 reviews</span>
+            </div>
+            <button class="pricing-menu-dots" aria-label="Menu">
+              <i class="fa-solid fa-ellipsis"></i>
+            </button>
+          </div>
+        </div>
+
+        <h1 class="pricing-headline">
+          Formules Simple, Flexible, Transparent
+        </h1>
+
+        <ul class="pricing-highlights">
+          <li>
+            <span class="highlight-icon highlight-icon--green">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            Garantie de remboursement de 30 jours
+          </li>
+          <li>
+            <span class="highlight-icon highlight-icon--blue">
+              <i class="fa-solid fa-rotate"></i>
+            </span>
+            Annuler à tout moment
+          </li>
+          <li>
+            <span class="highlight-icon highlight-icon--purple">
+              <i class="fa-solid fa-star"></i>
+            </span>
+            Essai gratuit de 7 jours sur la version Pro
+          </li>
+        </ul>
+
+        <div class="billing-toggle-wrap">
+          <div class="billing-toggle">
+            <button
+              class="billing-option active"
+              id="monthly-btn"
+              type="button"
+            >
+              Monthly
+            </button>
+            <button class="billing-option" id="annually-btn" type="button">
+              Annually
+            </button>
+          </div>
+          <div class="save-badge">
+            <span class="save-arrow">↗</span>
+            <span>save 25%</span>
+          </div>
+        </div>
+
+        <div class="pricing-cards">
+          <!-- Starter -->
+          <article class="pricing-card">
+            <span class="plan-badge plan-badge--basic">BASIC</span>
+            <h2 class="plan-name">Starter</h2>
+            <div class="plan-price">
+              <span class="price-amount" data-monthly="300" data-annually="225"
+                >300€</span
+              >
+              <span class="price-tier price-tier--starter">/Débutant</span>
+            </div>
+            <ul class="plan-features">
+              <li class="feature-included">
+                <i class="fa-solid fa-check"></i> Paiement d'avance
+              </li>
+              <li class="feature-included">
+                <i class="fa-solid fa-check"></i> Cession des droits
+              </li>
+              <li class="feature-included">
+                <i class="fa-solid fa-check"></i> 5 révisions
+              </li>
+              <li class="feature-excluded">
+                <i class="fa-solid fa-xmark"></i> UI Style non disponible
+              </li>
+              <li class="feature-excluded">
+                <i class="fa-solid fa-xmark"></i> Source non disponible
+              </li>
+              <li class="feature-bonus">
+                <i class="fa-solid fa-plus"></i> Support de 48 heures
+              </li>
+            </ul>
+          </article>
+
+          <!-- Business (featured) -->
+          <article class="pricing-card pricing-card--featured">
+            <span class="plan-badge plan-badge--pro">PRO</span>
+            <h2 class="plan-name">Business</h2>
+            <div class="plan-price">
+              <span class="price-amount" data-monthly="800" data-annually="600"
+                >800€</span
+              >
+              <span class="price-tier price-tier--business">/Amateur</span>
+            </div>
+            <ul class="plan-features">
+              <li class="feature-included">
+                <i class="fa-solid fa-check"></i> Acompte de 50%
+              </li>
+              <li class="feature-included">
+                <i class="fa-solid fa-check"></i> Cession des droits
+              </li>
+              <li class="feature-included">
+                <i class="fa-solid fa-check"></i> 10 révisions
+              </li>
+              <li class="feature-included">
+                <i class="fa-solid fa-check"></i> UI Style
+              </li>
+              <li class="feature-excluded">
+                <i class="fa-solid fa-xmark"></i> Source non disponible
+              </li>
+              <li class="feature-bonus">
+                <i class="fa-solid fa-plus"></i> Support d'une semaine
+              </li>
+            </ul>
+            <a href="#" class="see-more">See more <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+
+          <!-- Custom -->
+          <article class="pricing-card">
+            <span class="plan-badge plan-badge--expert">EXPERT</span>
+            <h2 class="plan-name">Custom</h2>
+            <div class="plan-price">
+              <span class="price-amount" data-monthly="1600" data-annually="1200"
+                >1600€</span
+              >
+              <span class="price-tier price-tier--custom">/Expert</span>
+            </div>
+            <ul class="plan-features">
+              <li class="feature-included">
+                <i class="fa-solid fa-check"></i> Acompte de 30%
+              </li>
+              <li class="feature-included">
+                <i class="fa-solid fa-check"></i> Cession des droits
+              </li>
+              <li class="feature-included">
+                <i class="fa-solid fa-check"></i> 10 révisions
+              </li>
+              <li class="feature-included">
+                <i class="fa-solid fa-check"></i> UI Style
+              </li>
+              <li class="feature-included">
+                <i class="fa-solid fa-check"></i> Source offerte
+              </li>
+              <li class="feature-bonus">
+                <i class="fa-solid fa-plus"></i> Support de 30 jours
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <footer class="pricing-footer">
+        <div class="pricing-footer-left">
+          <div class="scroll-controls">
+            <button type="button" aria-label="Scroll up">
+              <i class="fa-solid fa-chevron-up"></i>
+            </button>
+            <button type="button" aria-label="Scroll down">
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+          <p class="footer-nav-text">
+            <span class="footer-accent-line"></span>
+            Navigation vers les autres pages
+          </p>
+        </div>
+        <div class="pricing-footer-right">
+          <span>© Sb_2010 - 2025.txt</span>
+          <div class="footer-stamp">
+            <i class="fa-solid fa-circle-notch"></i>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      const openMenuButton = document.querySelector("#open-menu-button");
+      const closeMenuButton = document.querySelector("#close-menu-button");
+      const menu = document.querySelector(".menu");
+      const anchors = document.querySelectorAll(".anchor");
+      const navBtn = document.querySelector(".nav-btn");
+
+      openMenuButton.addEventListener("click", () => {
+        document.body.classList.toggle("show-mobile-menu");
+      });
+      closeMenuButton.addEventListener("click", () => openMenuButton.click());
+      anchors.forEach((anchor) => {
+        anchor.addEventListener("click", () => {
+          document.body.classList.remove("show-mobile-menu");
+        });
+      });
+      navBtn.addEventListener("click", () => {
+        document.body.classList.remove("show-mobile-menu");
+      });
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !openMenuButton.contains(e.target)) {
+          document.body.classList.remove("show-mobile-menu");
+        }
+      });
+
+      const monthlyBtn = document.getElementById("monthly-btn");
+      const annuallyBtn = document.getElementById("annually-btn");
+      const priceAmounts = document.querySelectorAll(".price-amount");
+
+      function setBilling(mode) {
+        const isAnnual = mode === "annually";
+        monthlyBtn.classList.toggle("active", !isAnnual);
+        annuallyBtn.classList.toggle("active", isAnnual);
+
+        priceAmounts.forEach((el) => {
+          const value = isAnnual ? el.dataset.annually : el.dataset.monthly;
+          el.textContent = value + "€";
+        });
+      }
+
+      monthlyBtn.addEventListener("click", () => setBilling("monthly"));
+      annuallyBtn.addEventListener("click", () => setBilling("annually"));
+    </script>
+  </body>
+</html>

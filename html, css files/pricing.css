@@ -55,6 +55,15 @@
   gap: 36px;
 }
 
+.pricing-hero hr {
+  display: block;
+  border: none;
+  height: 1px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #666666a7
+}
+
 /* Top row */
 .pricing-top-row {
   width: 100%;
@@ -305,11 +314,14 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  transition: border-color 0.3s ease, transform 0.3s ease;
-}
-
-.pricing-card:hover {
-  border-color: rgba(255, 255, 255, 0.14);
+  transform: scale(1);
+  z-index: 1;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .pricing-card--featured {
@@ -321,6 +333,29 @@
     0 0 80px rgba(43, 89, 255, 0.06);
   transform: scale(1.04);
   z-index: 2;
+}
+
+/* Shrink non-hovered cards when any card is hovered */
+.pricing-cards:has(.pricing-card:hover) .pricing-card:not(:hover) {
+  transform: scale(0.94);
+  z-index: 1;
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: none;
+  padding: 32px 28px 28px;
+}
+
+/* Expand hovered card to featured size with glow */
+.pricing-card:hover {
+  transform: scale(1.04);
+  z-index: 3;
+  padding: 40px 28px 32px;
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 102, 68, 0.45);
+  box-shadow:
+    0 0 40px rgba(255, 102, 68, 0.2),
+    0 0 80px rgba(43, 89, 255, 0.1),
+    0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 .plan-badge {
@@ -448,83 +483,6 @@
   font-size: 0.65rem;
 }
 
-/* ── Footer ── */
-.pricing-footer {
-  position: relative;
-  z-index: 1;
-  max-width: 1200px;
-  margin: 48px auto 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 20px;
-}
-
-.pricing-footer-left {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.scroll-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.scroll-controls button {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  font-size: 0.65rem;
-  transition: border-color 0.25s ease, color 0.25s ease;
-}
-
-.scroll-controls button:hover {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-}
-
-.footer-nav-text {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.footer-accent-line {
-  display: inline-block;
-  width: 24px;
-  height: 2px;
-  background: var(--secondary-color);
-  border-radius: 2px;
-}
-
-.pricing-footer-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.35);
-}
-
-.footer-stamp {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.85rem;
-}
-
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .pricing-top-row {
@@ -560,6 +518,18 @@
   .pricing-card--featured {
     transform: none;
     order: -1;
+  }
+
+  .pricing-cards:has(.pricing-card:hover) .pricing-card:not(:hover),
+  .pricing-card:hover {
+    transform: none;
+    padding: 32px 28px 28px;
+    box-shadow: none;
+  }
+
+  .pricing-card--featured,
+  .pricing-card:hover {
+    padding: 40px 28px 32px;
   }
 }
 

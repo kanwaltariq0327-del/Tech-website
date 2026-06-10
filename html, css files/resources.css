@@ -1,0 +1,574 @@
+body {
+  height: auto;
+  min-height: 100vh;
+}
+
+main {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 100vw;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  overflow-x: visible;
+}
+
+/* ── Hero ── */
+.resources-hero {
+  text-align: center;
+  padding: 80px 20px 60px;
+  background-color: #ffffff;
+}
+
+.resources-hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.3;
+}
+
+.resources-hero h1 span {
+  color: var(--primary-color);
+}
+
+/* ── Main Grid ── */
+.resources-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.85fr;
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.grid-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Shared Card ── */
+.resource-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 24px rgba(3, 11, 32, 0.07);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(3, 11, 32, 0.12);
+}
+
+.resource-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 16px 0 8px;
+}
+
+.resource-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ── Career Advice – Stacked Cards ── */
+.career-visual {
+  position: relative;
+  height: 200px;
+  margin-bottom: 8px;
+}
+
+.career-visual .stack-card {
+  position: absolute;
+  width: 72%;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease;
+}
+
+.career-visual .stack-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.career-visual .stack-card:nth-child(1) {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transform: rotate(-4deg);
+}
+
+.career-visual .stack-card:nth-child(2) {
+  top: 16px;
+  left: 14%;
+  z-index: 2;
+  transform: rotate(2deg);
+}
+
+.career-visual .stack-card:nth-child(3) {
+  top: 32px;
+  left: 28%;
+  z-index: 3;
+  transform: rotate(-1deg);
+}
+
+.career-visual .stack-card.stack-enter {
+  opacity: 0;
+  transform: translateY(24px) rotate(0deg);
+}
+
+.career-visual .stack-card.stack-enter.stack-visible {
+  opacity: 1;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.career-visual .stack-card:nth-child(1).stack-visible { transform: rotate(-4deg); }
+.career-visual .stack-card:nth-child(2).stack-visible { transform: rotate(2deg); }
+.career-visual .stack-card:nth-child(3).stack-visible { transform: rotate(-1deg); }
+
+.career-advice:hover .stack-card:nth-child(1) {
+  transform: rotate(-6deg) translateY(-4px);
+}
+
+.career-advice:hover .stack-card:nth-child(2) {
+  transform: rotate(4deg) translateY(-6px);
+}
+
+.career-advice:hover .stack-card:nth-child(3) {
+  transform: rotate(0deg) translateY(-8px);
+}
+
+/* ── Skill Courses – Video Player ── */
+.video-player {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 180px;
+  background: #f5f5f5;
+}
+
+.video-player img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-player .play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(3, 11, 32, 0.25);
+  color: #fff;
+  font-size: 2.5rem;
+  transition: background 0.3s ease;
+}
+
+.video-player:hover .play-btn {
+  background: rgba(3, 11, 32, 0.4);
+}
+
+/* ── Update Notification Card ── */
+.update-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 32px rgba(255, 102, 68, 0.12);
+  border: 1px solid #f5e8e4;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.update-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(255, 102, 68, 0.18);
+}
+
+.update-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--blue-color);
+  flex-shrink: 0;
+}
+
+.update-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.update-text {
+  flex: 1;
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.update-text strong {
+  color: #1a1a1a;
+}
+
+.update-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.update-btn:hover {
+  background: #e8553a;
+  transform: scale(1.05);
+}
+
+/* ── Industry Insights – Dotted Map BG ── */
+.industry-insights {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.industry-insights::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, #d0d0d0 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: 0.35;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 60%, black 20%, transparent 80%);
+  pointer-events: none;
+}
+
+.industry-insights h3,
+.industry-insights p {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Mentor Grid ── */
+.mentor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.mentor-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ── Job Search Tool Card ── */
+.job-snippet {
+  background: var(--background);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.job-snippet img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.job-snippet .job-info h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.job-snippet .job-info p {
+  font-size: 0.78rem;
+  color: #888;
+  margin: 0;
+}
+
+.job-snippet .job-tag {
+  margin-left: auto;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+/* ── Webinars Mini Calendar ── */
+.webinar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.webinar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: 1px solid #eee;
+}
+
+.webinar-date {
+  background: var(--darker-shade);
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  text-align: center;
+  min-width: 48px;
+}
+
+.webinar-date .day {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.webinar-date .month {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.webinar-item p {
+  flex: 1;
+  font-size: 0.82rem;
+  color: #444;
+  margin: 0;
+}
+
+.webinar-item button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.webinar-item button:hover {
+  transform: scale(1.08);
+}
+
+/* ── Tips Section ── */
+.resources-tips {
+  background: #fafafa;
+  padding: 80px 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.resources-tips h2 {
+  text-align: center;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 48px;
+}
+
+.resources-tips h2 span {
+  color: var(--primary-color);
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tip-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 20px rgba(3, 11, 32, 0.06);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(3, 11, 32, 0.1);
+}
+
+.tip-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.tip-icon.green { background: #22c55e; }
+.tip-icon.pink  { background: var(--primary-color); }
+.tip-icon.orange { background: var(--secondary-color); color: var(--darker-shade); }
+.tip-icon.purple { background: var(--dark-shade); }
+
+.tip-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.tip-card p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ── Scroll-reveal initial state (JS toggles .revealed) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Floating animation for update card */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.update-card.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+.update-card.floating:hover {
+  animation-play-state: paused;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .resources-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-col-right {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .grid-col-right .resource-card {
+    flex: 1 1 calc(33% - 16px);
+    min-width: 240px;
+  }
+
+  .tips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .resources-hero {
+    padding: 60px 16px 40px;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+    padding: 0 16px 60px;
+  }
+
+  .grid-col {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .grid-col-right {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .grid-col-right .resource-card {
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .job-snippet {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .job-snippet .job-tag {
+    margin-left: 0;
+  }
+
+  .webinar-item {
+    flex-wrap: wrap;
+  }
+
+  .webinar-item p {
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+
+  .update-card {
+    flex-wrap: wrap;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-visual {
+    height: 170px;
+  }
+}
